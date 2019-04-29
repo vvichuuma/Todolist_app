@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  
   get "/allusers" => "users#index"
 
   post "/cUser" => "users#create"
@@ -16,5 +15,9 @@ Rails.application.routes.draw do
   get "/allTasks" => "tasks#index"
 
   post "/ctask" => "tasks#create"
+
+   post "/sessions" => "sessions#create"
+
+   get "/user_tasks" => "tasks#view_tasks"
 
 end

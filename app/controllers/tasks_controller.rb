@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
 
+ 
   def index 
      
      @tasks = Task.all 
@@ -13,7 +14,7 @@ class TasksController < ApplicationController
     @task = Task.new(
         
        description: params[:description],
-       user_id: params[:user_id]
+       user_id: 2
  
       )
 
@@ -23,6 +24,17 @@ class TasksController < ApplicationController
        render json:{mess: "Task is not created"}
     end 
  
+  end 
+
+
+  def view_tasks
+
+   
+    @tasks = Task.where(user_id: current_user.id)
+
+    render "elon_task.json.jbuilder"
+
+    
   end 
 
 
