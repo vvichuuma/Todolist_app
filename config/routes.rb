@@ -22,4 +22,8 @@ Rails.application.routes.draw do
 
    get "/currentuser" => "users#currentuser"
 
+   get "/cusertasks" => "users#current_user_task"
+
+   delete "/deltask/:id" => "tasks#delete"
+
 end

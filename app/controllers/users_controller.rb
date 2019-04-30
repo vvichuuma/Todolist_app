@@ -56,7 +56,6 @@ class UsersController < ApplicationController
   end 
 
 
-
   def user_tasks
     
     @user = User.find_by(name: params[:name])
@@ -69,6 +68,15 @@ class UsersController < ApplicationController
    @user = User.find_by(id: current_user.id);
 
    render "currentuser.json.jbuilder"
+  end 
+
+
+  def current_user_task
+    
+    @user = User.find_by(id:current_user.id).tasks
+
+    render "current_user.json.jbuilder"
+  
   end 
 
 

@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     @task = Task.new(
         
        description: params[:description],
-       user_id: 2
+       user_id: current_user.id
  
       )
 
@@ -38,7 +38,15 @@ class TasksController < ApplicationController
   end 
 
 
+  def delete 
 
+    @task = Task.find_by(id: params[:id]);
+    
+   if @task.destroy
+     render json:{mess: "THe task has been removed"}
+   end 
+
+  end 
 
 
 end
