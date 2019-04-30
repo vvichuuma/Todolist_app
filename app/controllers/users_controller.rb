@@ -65,5 +65,11 @@ class UsersController < ApplicationController
 
   end 
 
+  def currentuser
+   @user = User.find_by(id: current_user.id);
+
+   render "currentuser.json.jbuilder"
+  end 
+
 
 end

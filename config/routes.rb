@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
    get "/user_tasks" => "tasks#view_tasks"
 
+   get "/currentuser" => "users#currentuser"
+
 end
