@@ -80,4 +80,9 @@ class UsersController < ApplicationController
   end 
 
 
+  def beatles
+    render json:{mess: "Music is Life"}
+  end 
+
+
 end
